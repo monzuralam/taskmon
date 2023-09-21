@@ -4,12 +4,17 @@ import { createRouter, createWebHistory } from "vue-router";
 import "./style.css";
 import App from "./App.vue";
 import Dashboard from "./components/Dashboard.vue";
+import Errors from "./components/errors.vue";
 
 const routes = [
   {
     path: "/",
     component: Dashboard,
   },
+  {
+    path: "/:pathMatch(.*)*",
+    component: Errors
+  }
 ];
 
 const router = createRouter({
