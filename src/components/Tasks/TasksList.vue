@@ -14,17 +14,26 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        <tr
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+          v-for="task in tasks"
+        >
           <th
             scope="row"
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
           >
-            Marbs WordPress Theme Development
+            {{ task.title }}
           </th>
-          <td class="px-6 py-4">Monzur Alam</td>
-          <td class="px-6 py-4">Todo</td>
-          <td class="px-6 py-4">12-10-2023</td>
-          <td class="px-6 py-4">100</td>
+          <td class="px-6 py-4">{{ task.developer }}</td>
+          <td class="px-6 py-4">
+            <span>{{ task.status }}</span>
+          </td>
+          <td class="px-6 py-4">
+            <span>{{ task.deadline }}</span>
+          </td>
+          <td class="px-6 py-4">
+            {{ task.timer }}
+          </td>
           <td class="px-6 py-4">
             <div class="flex justify-between items-center align-middle">
               <router-link to="/tasks/1">
@@ -87,6 +96,12 @@
     </table>
   </div>
 </template>
+<script setup>
+import { useTaskStore } from "../../stores/tasks.js";
+const data = useTaskStore();
+const tasks = data.tasks;
+</script>
+
 <script>
 export default {
   name: "TasksList",
