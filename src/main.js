@@ -5,6 +5,7 @@ import "./style.css";
 import App from "./App.vue";
 import Dashboard from "./components/Dashboard.vue";
 import Tasks from "./components/Tasks.vue";
+import TaskView from "./components/TaskView.vue";
 import Errors from "./components/errors.vue";
 
 const routes = [
@@ -14,12 +15,16 @@ const routes = [
   },
   {
     path: "/tasks",
-    component: Tasks
+    component: Tasks,
+  },
+  {
+    path: "/tasks/:id",
+    component: TaskView,
   },
   {
     path: "/:pathMatch(.*)*",
-    component: Errors
-  }
+    component: Errors,
+  },
 ];
 
 const router = createRouter({
