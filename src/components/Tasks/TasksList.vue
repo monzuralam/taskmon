@@ -36,7 +36,7 @@
           </td>
           <td class="px-6 py-4">
             <div class="flex justify-between items-center align-middle">
-              <router-link to="/tasks/1">
+              <router-link :to="'/tasks/' + task.id">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -57,7 +57,7 @@
                   />
                 </svg>
               </router-link>
-              <router-link to="/tasks/1">
+              <router-link to="/tasks/edit/1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
