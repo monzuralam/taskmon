@@ -22,7 +22,9 @@
             scope="row"
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
           >
-            {{ task.title }}
+            <router-link :to="'/tasks/' + task.id">
+              {{ task.title }}
+            </router-link>
           </th>
           <td class="px-6 py-4">{{ task.developer }}</td>
           <td class="px-6 py-4">
@@ -57,7 +59,7 @@
                   />
                 </svg>
               </router-link>
-              <router-link to="/tasks/edit/1">
+              <router-link to="/tasks/1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
