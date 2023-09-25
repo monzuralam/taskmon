@@ -12,8 +12,9 @@
 import Topbar from "./Topbar.vue";
 import Menu from "./Menu.vue";
 import TasksTopbar from "./Tasks/TasksTopbar.vue";
+import AddTaskForm from "./AddTask/AddTaskForm.vue";
 export default {
   name: "Tasks",
-  components: { Topbar, Menu, TasksTopbar },
+  components: { Topbar, Menu, TasksTopbar, AddTaskForm },
 };
 </script>
