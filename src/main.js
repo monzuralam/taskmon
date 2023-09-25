@@ -6,6 +6,7 @@ import App from "./App.vue";
 import Dashboard from "./components/Dashboard.vue";
 import Tasks from "./components/Tasks.vue";
 import TaskView from "./components/TaskView.vue";
+import AddTask from "./components/AddTask.vue";
 import Errors from "./components/errors.vue";
 
 const routes = [
@@ -20,6 +21,10 @@ const routes = [
   {
     path: "/tasks/:id",
     component: TaskView,
+  },
+  {
+    path: "/task-add/",
+    component: AddTask,
   },
   {
     path: "/:pathMatch(.*)*",
