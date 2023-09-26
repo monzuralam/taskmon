@@ -73,6 +73,7 @@
 <script setup>
 import { ref } from "vue";
 import { useTaskStore } from "./../../stores/tasks.js";
+import router from "./../../main.js";
 
 const data = useTaskStore();
 const tasks = data.tasks;
@@ -115,8 +116,10 @@ const taskAddForm = () => {
       timer,
       comments,
     });
-    console.log("Success");
-    console.log(taskAdd);
+    // redirect to tasks
+    if (taskAdd) {
+      router.push("/tasks/");
+    }
   } else {
     console.log("Error");
   }
