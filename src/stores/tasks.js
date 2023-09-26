@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import route from "./../main";
 export const useTaskStore = defineStore("tasks", {
   state: () => {
     return {
@@ -17,4 +18,12 @@ export const useTaskStore = defineStore("tasks", {
       ],
     };
   },
+  actions: {
+    deleteTasks(id) {
+      this.tasks = this.tasks.filter((item) => item.id !== id);
+      if (this.tasks) {
+        route.push('/');
+      }
+    }
+  }
 });

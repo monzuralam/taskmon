@@ -107,8 +107,7 @@ import { useTaskStore } from "../../stores/tasks.js";
 const data = useTaskStore();
 const tasks = data.tasks;
 const deleteTask = (id) => {
-  console.log("click" + id);
-  const updateTasks = tasks.filter((item) => item.id !== id);
+  data.deleteTasks(id);
 };
 </script>
 
