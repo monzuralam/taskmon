@@ -79,7 +79,7 @@
                   />
                 </svg>
               </router-link>
-              <a href="#">
+              <a href="#" @click="deleteTask(task.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -106,6 +106,10 @@
 import { useTaskStore } from "../../stores/tasks.js";
 const data = useTaskStore();
 const tasks = data.tasks;
+const deleteTask = (id) => {
+  console.log("click" + id);
+  const updateTasks = tasks.filter((item) => item.id !== id);
+};
 </script>
 
 <script>
